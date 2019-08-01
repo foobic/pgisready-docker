@@ -30,7 +30,7 @@ services:
       - "5432:5432"
 
   check_testdb:
-    image: $CI_REGISTRY_IMAGE/utils:latest
+    image: foobic/pgisready-docker:latest
     environment:
       HOST: testdb
       RETRIES: 5

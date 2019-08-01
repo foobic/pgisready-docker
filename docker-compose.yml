@@ -1,21 +1,3 @@
-# pgisready-docker
-Dockerfile for `pg_isready` utility.
-
-Convenient for make sure that database is running and accepting connections, especially on CI.
-
-## Usage:
-
-### Docker
-```
-docker run -e HOST=testdb -e DELAY=2 -e RETRIES=2 \
-           --network example_network \
-           foobic/pg_isready \
-            /scripts/pg_isready.sh 
-```
-
-### Docker-compose
-
-```
 version: '3.5'
 
 services:
@@ -35,4 +17,3 @@ services:
       HOST: testdb
       RETRIES: 5
     command: /scripts/pg_isready.sh
-```
